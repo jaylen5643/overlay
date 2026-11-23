@@ -1,38 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Overlay</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FadedCheats Overlay</title>
+
 <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body{
-margin:0;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:transparent;
-font-family:Arial,sans-serif;
+    background:transparent;
+    font-family:Arial, sans-serif;
+    overflow:hidden;
 }
 
-.btn{
-background:#ff4fa3;
-padding:20px 40px;
-border-radius:15px;
-font-size:32px;
-font-weight:bold;
-text-decoration:none;
-color:white;
-box-shadow:0 0 20px #ff4fa3;
+.background{
+    position:fixed;
+    inset:0;
+    background:#000;
 }
-</style>
-</head>
-<body>
 
-<a class="btn"
-href="https://discord.gg/fadedcheats"
-target="_blank">
-JOIN DISCORD
-</a>
+.background span{
+    position:absolute;
+    display:block;
+    width:4px;
+    height:4px;
+    background:white;
+    border-radius:50%;
+    animation:float 12s linear infinite;
+    opacity:.8;
+}
 
-</body>
-</html>
+@keyframes float{
+    0%{
+        transform:translateY(100vh);
+    }
+    100%{
+        transform:translateY(-100vh);
+    }
+}
+
+.card{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:850px;
+    background:rgba(20,20,20,.95);
+    border:2px solid #ff6bd6;
+    border-radius:20px;
+    overflow
